@@ -143,12 +143,12 @@ function M.setup(opt)
         range = true,
     })
     vim.api.nvim_create_user_command('GitoCopy', gitoCopyLine, {
-        desc = 'Open current file in browser',
+        desc = 'Copy current file in browser',
         force = true,
         range = true,
     })
     vim.api.nvim_create_user_command('GitoCopyFile', gitoCopyFile, {
-        desc = 'Open current file in browser',
+        desc = 'Copy current file in browser',
         force = true,
         range = true,
     })
@@ -157,13 +157,13 @@ function M.setup(opt)
     local open_key = key.open or '<leader>go'
     local copy_key = key.open or '<leader>gy'
     vim.keymap.set({ 'n' }, open_key, ':GitoOpen<cr>',
-        { silent = true, remap = false, desc = 'open current line in browser' })
+        { silent = true, remap = false, desc = 'Open current line in browser' })
     vim.keymap.set({ 'n' }, copy_key, ':GitoCopy<cr>',
-        { silent = true, remap = false, desc = 'copy current line in browser' })
+        { silent = true, remap = false, desc = 'Copy current line in browser' })
     vim.keymap.set({ 'v' }, open_key, ":'<,'>GitoOpen<cr>",
-        { silent = true, remap = false, desc = 'open current line in browser' })
+        { silent = true, remap = false, desc = 'Open current line in browser' })
     vim.keymap.set({ 'v' }, copy_key, ":'<,'>GitoCopy<cr>",
-        { silent = true, remap = false, desc = 'copy current line in browser' })
+        { silent = true, remap = false, desc = 'Copy current line in browser' })
 end
 
 return M
